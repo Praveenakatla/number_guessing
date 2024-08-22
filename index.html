@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ 
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color:grey;
+
+        }
+        div{
+            border:10px solid white;
+            background-color: rgba(0,0,0,0.7);
+            width:70vw;
+            height:50vh;
+            color:white;
+            text-align: center;
+            
+        }
+        input{
+            margin-top:20px;
+        }
+        /* button{
+            margin:5px;
+        } */
+    </style>
+
+</head>
+<body>
+    <h1>Number Guessing</h1>
+    <div>
+        <p>Guess a number from 1-100</p>
+        <p >Enter a number below </p>
+        <input type="text">
+        <button onclick="fun()">Enter</button>
+    </div>
+    <script>
+        const num=Math.round(Math.random()*100)
+        function fun(){
+        let p=document.getElementsByTagName("p")[1]
+        let i=document.getElementsByTagName("input")[0]
+        let value=parseInt(i.value)
+        
+        console.log(num)
+        // console.log(value)
+        if(value===num){
+            p.innerHTML="Your guess is correct"
+            
+
+        }
+        else if(value<num){
+            p.innerHTML="Your guess is two low"
+        }
+        else if(value>num){
+            p.innerHTML="your guess is too high"
+        }
+    }
+
+    </script>
+
+</body>
+</html>
